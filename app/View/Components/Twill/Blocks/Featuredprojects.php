@@ -21,8 +21,8 @@ class Featuredprojects extends TwillBlockComponent
     public function getForm(): Form
     {
         return Form::make([
-            Input::make()->name('title'),
-            Wysiwyg::make()->name('text'),
+            Input::make()->name('title')->translatable(),
+            Wysiwyg::make()->name('text')->translatable(),
             Browser::make()
                 ->name('projects')
                 ->modules([Project::class])
