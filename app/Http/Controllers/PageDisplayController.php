@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use App\Repositories\PageRepository;
 use A17\Twill\Facades\TwillAppSettings;
+use App\Repositories\ProjectRepository;
 
 class PageDisplayController extends Controller
 {
@@ -31,5 +32,16 @@ class PageDisplayController extends Controller
         }
  
         abort(404);
+    }
+
+    public function project(string $slug, ProjectRepository $projectRepository): View
+    {
+        $project = $projectRepository->forSlug($slug);
+
+        if (!$project) {
+            abort(404);
+        }
+
+        return view('site.page', ['item' => $project]);
     }
 }

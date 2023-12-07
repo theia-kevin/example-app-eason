@@ -3,7 +3,7 @@
   <div>{!! $translatedInput('text') !!}</div>
   <ul class="list-disc">
     @foreach($block->getRelated('projects') as $project)
-    <li>{{ $project->title }}</li>
+    <li><a href="{{ route('frontend.project', ['slug' => $project->slug]) }}">{{ $project->title }}</a></li>
     @endforeach
   </ul>
 </div>
