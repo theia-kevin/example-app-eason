@@ -28,6 +28,23 @@ return [
 					],
 				],
 			],
+			'cover' => [
+				'default' => [
+					[
+						'name' => 'default',
+						'ratio' => 16 / 9,
+					],
+				],
+				'mobile' => [
+					[
+						'name' => 'landscape',
+						'ratio' => 16 / 9,
+					],
+				],
+			],
 		],
-	]
+	],
+	'media_library' => [
+		'translated_form_fields' => true,
+	],
 ];
