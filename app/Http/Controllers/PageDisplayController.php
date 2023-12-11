@@ -42,6 +42,6 @@ class PageDisplayController extends Controller
             abort(404);
         }
 
-        return view('site.page', ['item' => $project]);
+        return view('site.project', ['item' => $project]);
     }
 }

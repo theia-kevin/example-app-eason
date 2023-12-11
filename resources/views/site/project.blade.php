@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <title>Demo page</title>
+    <title>{{ $item->title }}</title>
+    @vite('resources/css/app.css')
 </head>
+
 <body>
-<div>
-    Example preview. See <a href="https://twillcms.com/docs/modules/revisions-and-previewing.html">documentation.</a>
-    <br />
-    {{ $item->title }}
-    <br />
-    {{ $item->description }}
-</div>
+    @include('site.header')
+    <div class="container mx-auto">
+        {!! $item->renderBlocks() !!}
+        <div class="space-y-8">
+            @foreach($item->images('cover') as $projectImage)
+            <img src="{{ $projectImage }}" alt="">
+            @endforeach
+        </div>
+    </div>
 </body>
+
 </html>
