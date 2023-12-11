@@ -22,6 +22,7 @@ class Project extends Model implements Sortable
         'title',
         'description',
         'position',
+        'is_completed',
     ];
     
     public $translatedAttributes = [
