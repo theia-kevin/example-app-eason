@@ -59,6 +59,21 @@ class ProjectController extends BaseModuleController
             Text::make()->field('description')->title('Description')
         );
 
+        $table->add(
+            Text::make()->field('is_completed')->title('Is Completed')
+        );
+
+        return $table;
+    }
+
+    protected function additionalBrowserTableColumns(): TableColumns
+    {
+        $table = parent::additionalBrowserTableColumns();
+
+        $table->add(
+            Text::make()->field('is_completed')->title('Is Completed')
+        );
+
         return $table;
     }
 }
